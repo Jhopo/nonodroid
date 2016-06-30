@@ -58,7 +58,6 @@ public class PreMainActivity extends AppCompatActivity {
         origin_user = tempUser;
 
 
-
         login_button.setOnClickListener(new Button.OnClickListener() {
 
             @Override
