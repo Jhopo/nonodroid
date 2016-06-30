@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="net.jhopo.nonodroid.AnimeInfoActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/anime_name"
+        android:textColor="@color/dkkgreen"
+        android:textSize="@dimen/info_name_size"
+        android:id="@+id/button_name"
+        android:background="?android:attr/selectableItemBackground"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="start|center_vertical"
+        android:layout_marginTop="4dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/anime_update"
+        android:textColor="@color/dkgreen"
+        android:textSize="@dimen/main_title_size"
+        android:id="@+id/button_update"
+        android:layout_below="@+id/button_name"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginTop="7dp"
+        android:layout_marginLeft="14dp"/>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_below="@+id/button_update"
+        android:layout_marginTop="35dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:divider="#C5E1A5"
+        android:dividerHeight="1px"/>
+
+    <Button
+        android:id="@+id/add_name"
+        android:text="@string/add_icon"
+        android:onClick="onSubmit"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@color/green"
+        android:layout_alignTop="@+id/eli_name"
+        android:layout_alignRight="@+id/listView"
+        android:layout_alignEnd="@+id/listView" />
+
+    <Button
+        android:id="@+id/eli_name"
+        android:text="@string/eli_icon"
+        android:onClick="onSubmit"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@color/green"
+        android:layout_below="@+id/button_update"
+        android:layout_toLeftOf="@+id/add_name"
+        android:layout_toStartOf="@+id/add_name" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/switch1"
+        android:layout_below="@+id/button_name"
+        android:layout_alignRight="@+id/add_name"
+        android:layout_alignEnd="@+id/add_name"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginEnd="15dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/renew"
+        android:id="@+id/renew"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@color/orange"
+        android:layout_above="@+id/switch1"
+        android:layout_toRightOf="@+id/eli_name"
+        android:layout_toEndOf="@+id/eli_name"
+        android:clickable="true"
+        android:enabled="true" />
+
+
+</RelativeLayout>

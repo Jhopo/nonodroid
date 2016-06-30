@@ -1,0 +1,49 @@
+﻿<resources>
+    <string name="app_name">Anicolle</string>
+    <string name="splash_name">Anicolle</string>
+    <string name="main_title">所有收藏</string>
+    <string name="add_icon">+</string>
+    <string name="eli_icon">-</string>
+
+    <string name="enter_title">輸入動畫名稱</string>
+    <string name="cancel">取消</string>
+    <string name="ok">確定</string>
+
+    <string name="deletetext">確定要刪除此動畫嗎？</string>
+    <string name="deletecancel">算了</string>
+    <string name="deleteok">好,謝謝</string>
+
+    <string name="anime_name">範例動畫名稱</string>
+    <string name="anime_update">更新時間</string>
+
+    <string name="edit_title">修改動畫名稱</string>
+    <string name="edit_name_ok">完成</string>
+
+    <string name="edit_updatetime">修改更新時間</string>
+    <string name="edit_time_cancel">取消</string>
+
+    <string name="set_update">設定更新時間</string>
+    <string name="default_update">連載中</string>
+    <string name="mon_update">星期一</string>
+    <string name="tue_update">星期二</string>
+    <string name="wed_update">星期三</string>
+    <string name="thu_update">星期四</string>
+    <string name="fri_update">星期五</string>
+    <string name="sat_update">星期六</string>
+    <string name="sun_update">星期日</string>
+    <string name="fin_update">放送完畢</string>
+    <string name="cancel_update">取消</string>
+
+    <string name="edit_epi_title">輸入評論</string>
+    <string name="edittext">更改第?話評論</string>
+
+    <string name="renew">refresh</string>
+
+    <string name="login">登入</string>
+    <string name="offline">Offline</string>
+    <string name="input_username">輸入使用者名稱</string>
+    <string name="enter_username">進入使用者的動畫收藏</string>
+    <string name="save_username">儲存使用者的動畫收藏</string>
+
+
+</resources>
