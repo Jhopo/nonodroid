@@ -73,8 +73,8 @@ public class PreMainActivity extends AppCompatActivity {
                             .apply();
 
                     request = LOGIN;
-                    Thread thread = new Thread(Connection);     //賦予執行緒工作
-                    thread.start();                    //讓執行緒開始執行
+                    Thread thread = new Thread(Connection);    
+                    thread.start();      
 
                     String status_str;
                     status_text = (TextView) findViewById(R.id.status);
@@ -124,17 +124,14 @@ public class PreMainActivity extends AppCompatActivity {
     private Runnable Connection=new Runnable(){
         @Override
         public void run() {
-            // TODO Auto-generated method stub
+            
             try{
-                // IP為Server端
+               
                 InetAddress serverIp = InetAddress.getByName("140.112.250.38");
                 int serverPort = 5050;
                 Socket clientSocket = new Socket(serverIp, serverPort);
-                //取得網路輸出串流
                 BufferedWriter bw = new BufferedWriter( new OutputStreamWriter(clientSocket.getOutputStream()));
-                // 取得網路輸入串流
                 BufferedReader br = new BufferedReader( new InputStreamReader(clientSocket.getInputStream()));
-                // 當連線後
 
 
                 String tmp;
@@ -152,11 +149,9 @@ public class PreMainActivity extends AppCompatActivity {
 
                         tmp = br.readLine();
                         AnimeData = getSharedPreferences("AnimeData", MODE_PRIVATE);
-                        //if(tempUser.compareTo(origin_user) != 0) {
                         AnimeData.edit()
                                 .putString("JSON", tmp)
                                 .apply();
-                        // }
                         origin_user = tempUser;
                         bw.close();
                         br.close();
@@ -180,48 +175,14 @@ public class PreMainActivity extends AppCompatActivity {
                         clientSocket.close();
                     }
                 }
-                /*
-                while (clientSocket.isConnected()) {
-                    // 取得網路訊息
-                    tmp = br.readLine();    //宣告一個緩衝,從br串流讀取值
-                    // 如果不是空訊息
-                    if(tmp!=null){
 
-
-                    }
-                }
-                */
 
             }catch(Exception e){
-                //當斷線時會跳到catch,可以在這裡寫上斷開連線後的處理
                 e.printStackTrace();
                 Log.e("text", "Socket disconnected = " + e.toString());
 
             }
         }
     };
-/*
-    @Override
-    protected void onDestroy() {            //當銷毀該app時
-        super.onDestroy();
-        try {
-            json_write=new JSONObject();
-            json_write.put("action","離線");    //傳送離線動作給伺服器
-            Log.i("text","onDestroy()="+json_write+"\n");
-            //寫入後送出
-            bw.write(json_write+"\n");
-            bw.flush();
-            //關閉輸出入串流後,關閉Socket
-            //最近在小作品有發現close()這3個時,導致while (clientSocket.isConnected())這個迴圈內的區域錯誤
-            //會跳出java.net.SocketException:Socket is closed錯誤,讓catch內的處理再重複執行,如有同樣問題的可以將下面這3行註解掉
-            bw.close();
-            br.close();
-            clientSocket.close();
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-            Log.e("text", "onDestroy()=" + e.toString());
-        }
-    }
-*/
+
 }
